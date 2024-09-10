@@ -520,13 +520,20 @@ header nav a {
 
 .portfolio .container {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.portfolio .section {
+  display: flex;
   justify-content: center;
   gap: 5px;
   padding: 0px 90px;
 }
 
 @media (max-width: 991px) {
-  .portfolio .container {
+  .portfolio .section {
     display: flex;
     flex-direction: column;
     padding: 0px;
@@ -573,7 +580,7 @@ header nav a {
 
 @media (max-width:991px) {
   .portfolio .heading img {
-    width: 450px;
+    width: 100%;
   }
 }
 
@@ -605,6 +612,88 @@ header nav a {
 
   .portfolio .middle .two {
     flex-shrink: 0;
+  }
+}
+
+.arrow-container {
+  width: 100%;
+  height: 30px;
+  background-color: #f0f0f0;
+  /* Optional background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+@media (max-width: 991px) {
+  .arrow-container {
+    gap: 20px;
+  }
+}
+
+.arrow-left,
+.arrow-right {
+  width: 200px;
+  height: 1px;
+  background-color: red;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+
+  .arrow-left,
+  .arrow-right {
+    width: 100px;
+  }
+}
+
+.arrow-left::before,
+.arrow-left::after,
+.arrow-right::before,
+.arrow-right::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background-color: red;
+}
+
+.arrow-left::before {
+  left: 0;
+  top: -4px;
+  transform: rotate(135deg);
+}
+
+.arrow-left::after {
+  left: 0;
+  top: 4px;
+  transform: rotate(-135deg);
+}
+
+.arrow-right::before {
+  right: 0;
+  top: -4px;
+  transform: rotate(-135deg);
+}
+
+.arrow-right::after {
+  right: 0;
+  top: 4px;
+  transform: rotate(135deg);
+}
+
+.line {
+  width: calc(100% - 700px);
+  height: 1px;
+  background-color: gray;
+  position: relative;
+  margin: 0 10px;
+}
+
+@media (max-width: 991px) {
+  .line {
+    width: 100%;
   }
 }
 
